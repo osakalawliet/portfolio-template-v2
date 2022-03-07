@@ -24,6 +24,11 @@ jobs:
       - name: Build app
         run: yarn build
 
+      - name: Create firebase.json and .firebaserc
+        run: |
+          echo ${{ secrets.FIREBASE_JSON }} | base64 -d >> firebase.json
+          echo ${{ secrets.FIREBASERC }} | base64 -d >> .firebaserc
+
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
