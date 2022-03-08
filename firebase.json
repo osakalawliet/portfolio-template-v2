@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "happypoophy",
     "public": "build",
     "ignore": [
       "firebase.json",
